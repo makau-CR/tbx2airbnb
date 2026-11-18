@@ -1,0 +1,909 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="index,follow">
+<title>TBX Agency Africa — Luxury Airbnbs in Naivasha</title>
+<meta name="description" content="Handpicked luxury Airbnbs in Naivasha, Kenya. Book stays and extra activities with TBX Agency Africa.">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+/* ============ RESET ============ */
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --primary:#0f4c3a;--primary-light:#1a7a5e;--accent:#e8b339;--accent-dark:#c9971f;
+  --dark:#0a1f1a;--text:#1a2e28;--muted:#6b7f78;--bg:#fafaf7;--surface:#fff;
+  --border:#e5e8e3;--shadow:0 4px 24px rgba(15,76,58,.08);
+  --shadow-lg:0 20px 60px rgba(15,76,58,.15);
+  --radius:16px;--radius-sm:10px;--wa:#25D366;
+}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--text);line-height:1.6;-webkit-font-smoothing:antialiased;min-height:100vh;display:flex;flex-direction:column}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+button{font-family:inherit;cursor:pointer;border:none;background:none}
+input,textarea,select{font-family:inherit}
+.page{display:none;flex:1}
+.page.active{display:block}
+
+/* ============ HEADER ============ */
+.site-header{position:sticky;top:0;z-index:100;background:rgba(255,255,255,.95);backdrop-filter:blur(12px);border-bottom:1px solid var(--border)}
+.nav-wrap{max-width:1280px;margin:0 auto;padding:1rem 1.5rem;display:flex;align-items:center;justify-content:space-between;gap:1rem}
+.logo{display:flex;align-items:center;gap:.6rem;font-weight:800;font-size:1.25rem;letter-spacing:-.5px;cursor:pointer}
+.logo-mark{width:40px;height:40px;border-radius:10px;background:linear-gradient(135deg,var(--primary),var(--primary-light));color:#fff;display:grid;place-items:center;font-size:1.1rem;font-weight:900}
+.logo span{color:var(--accent)}
+.nav-links{display:flex;gap:.25rem;list-style:none;flex-wrap:wrap}
+.nav-links a{padding:.5rem .9rem;border-radius:8px;font-size:.9rem;font-weight:500;color:var(--muted);transition:.2s;cursor:pointer}
+.nav-links a:hover,.nav-links a.active{background:var(--primary);color:#fff}
+.menu-toggle{display:none;font-size:1.5rem;color:var(--primary)}
+
+/* ============ BUTTONS ============ */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;padding:.85rem 1.75rem;border-radius:60px;font-weight:600;font-size:.95rem;cursor:pointer;transition:transform .15s,box-shadow .2s,background .2s;border:none}
+.btn-primary{background:var(--primary);color:#fff;box-shadow:0 8px 20px rgba(15,76,58,.25)}
+.btn-primary:hover{background:var(--primary-light);transform:translateY(-2px)}
+.btn-accent{background:var(--accent);color:var(--dark);box-shadow:0 8px 20px rgba(232,179,57,.3)}
+.btn-accent:hover{background:var(--accent-dark);transform:translateY(-2px)}
+.btn-outline{border:2px solid var(--primary);color:var(--primary);background:transparent}
+.btn-outline:hover{background:var(--primary);color:#fff}
+.btn-wa{background:var(--wa);color:#fff;box-shadow:0 8px 20px rgba(37,211,102,.3)}
+.btn-wa:hover{background:#1eb055;transform:translateY(-2px)}
+.btn-ghost{background:transparent;border:1px solid var(--border);color:var(--muted)}
+.btn-ghost:hover{background:#f8fafc}
+
+/* ============ HERO ============ */
+.hero{position:relative;min-height:88vh;display:flex;align-items:center;overflow:hidden;background:linear-gradient(135deg,#0a1f1a 0%,#0f4c3a 100%)}
+.hero-slides{position:absolute;inset:0;z-index:0}
+.hero-slide{position:absolute;inset:0;background-size:cover;background-position:center;opacity:0;transition:opacity 1.2s ease}
+.hero-slide.active{opacity:1}
+.hero-slide::after{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(10,31,26,.85) 0%,rgba(15,76,58,.5) 100%)}
+.hero-content{position:relative;z-index:2;max-width:1280px;margin:0 auto;padding:4rem 1.5rem;width:100%;color:#fff}
+.hero-eyebrow{display:inline-flex;align-items:center;gap:.5rem;background:rgba(232,179,57,.15);border:1px solid rgba(232,179,57,.4);color:var(--accent);padding:.5rem 1rem;border-radius:60px;font-size:.85rem;font-weight:600;margin-bottom:1.5rem}
+.hero h1{font-size:clamp(2.2rem,6vw,4.5rem);font-weight:800;line-height:1.05;letter-spacing:-2px;margin-bottom:1.5rem;max-width:800px}
+.hero h1 em{color:var(--accent);font-style:normal}
+.hero p{font-size:clamp(1rem,2vw,1.2rem);max-width:600px;margin-bottom:2.5rem;color:rgba(255,255,255,.85);line-height:1.7}
+.hero-actions{display:flex;gap:1rem;flex-wrap:wrap}
+
+/* ============ SECTIONS ============ */
+.section{padding:5rem 1.5rem}
+.section-inner{max-width:1280px;margin:0 auto}
+.section-head{text-align:center;margin-bottom:3rem}
+.section-eyebrow{color:var(--accent-dark);font-weight:700;font-size:.85rem;letter-spacing:2px;text-transform:uppercase;margin-bottom:.75rem}
+.section-title{font-size:clamp(1.8rem,4vw,2.75rem);font-weight:800;letter-spacing:-1px;line-height:1.15;margin-bottom:1rem}
+.section-sub{color:var(--muted);max-width:600px;margin:0 auto;font-size:1.05rem}
+
+/* ============ CARDS ============ */
+.grid-3{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:2rem}
+.card{background:var(--surface);border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow);transition:transform .25s,box-shadow .25s}
+.card:hover{transform:translateY(-6px);box-shadow:var(--shadow-lg)}
+.card-img{aspect-ratio:16/10;background-size:cover;background-position:center;background-color:#e5e8e3}
+.card-body{padding:1.5rem}
+.card-body h3{font-size:1.2rem;font-weight:700;margin-bottom:.5rem}
+.card-body p{color:var(--muted);font-size:.92rem;margin-bottom:1rem}
+.card-meta{display:flex;gap:1rem;font-size:.85rem;color:var(--muted);margin-bottom:1rem;flex-wrap:wrap}
+.card-price{font-size:1.4rem;font-weight:800;color:var(--primary)}
+.card-price small{font-size:.85rem;font-weight:500;color:var(--muted)}
+
+/* ============ FORMS ============ */
+.form-group{margin-bottom:1.25rem}
+.form-group label{display:block;font-weight:600;font-size:.9rem;margin-bottom:.4rem}
+.form-group input,.form-group select,.form-group textarea{width:100%;padding:.85rem 1rem;border:1px solid var(--border);border-radius:var(--radius-sm);font-size:.95rem;background:#fff;color:var(--text);transition:border-color .2s,box-shadow .2s}
+.form-group input:focus,.form-group select:focus,.form-group textarea:focus{outline:none;border-color:var(--primary);box-shadow:0 0 0 3px rgba(15,76,58,.1)}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+
+/* ============ GALLERY ============ */
+.gallery-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:1rem}
+.gallery-item{position:relative;aspect-ratio:1;border-radius:var(--radius-sm);overflow:hidden;background:#e5e8e3;cursor:pointer}
+.gallery-item img{width:100%;height:100%;object-fit:cover;transition:transform .3s}
+.gallery-item:hover img{transform:scale(1.05)}
+
+/* ============ ADMIN ============ */
+.admin-card{background:#fff;border-radius:var(--radius);padding:2rem;box-shadow:var(--shadow);margin-bottom:1.5rem}
+.admin-card h2{font-size:1.2rem;font-weight:700;margin-bottom:1.25rem;display:flex;align-items:center;gap:.5rem}
+.admin-card h2 i{color:var(--accent)}
+.admin-stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:1rem;margin-bottom:1.5rem}
+.admin-stat{background:#fff;padding:1.25rem;border-radius:var(--radius-sm);border:1px solid var(--border)}
+.admin-stat .num{font-size:1.75rem;font-weight:800;color:var(--primary)}
+.admin-stat .label{font-size:.8rem;color:var(--muted);font-weight:500}
+.admin-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:1rem;margin-top:1.5rem}
+.admin-item{position:relative;aspect-ratio:1;border-radius:var(--radius-sm);overflow:hidden;background:#e5e8e3}
+.admin-item img{width:100%;height:100%;object-fit:cover}
+.admin-item .del{position:absolute;top:.4rem;right:.4rem;width:30px;height:30px;border-radius:50%;background:rgba(220,38,38,.95);color:#fff;display:grid;place-items:center;font-size:.85rem;border:none;cursor:pointer}
+.upload-zone{border:2px dashed var(--border);border-radius:var(--radius);padding:3rem 1.5rem;text-align:center;transition:.2s;cursor:pointer;background:#fff;display:block}
+.upload-zone:hover,.upload-zone.dragover{border-color:var(--primary);background:rgba(15,76,58,.02)}
+.upload-zone input{display:none}
+.upload-zone .up-icon{font-size:2.5rem;color:var(--primary);margin-bottom:1rem}
+.hidden{display:none!important}
+
+/* ============ WHATSAPP FLOAT ============ */
+.wa-float{position:fixed;bottom:1.5rem;right:1.5rem;z-index:99;width:60px;height:60px;border-radius:50%;background:var(--wa);color:#fff;display:grid;place-items:center;font-size:1.75rem;box-shadow:0 10px 30px rgba(37,211,102,.4);transition:transform .2s}
+.wa-float:hover{transform:scale(1.1)}
+
+/* ============ FOOTER ============ */
+.site-footer{background:var(--dark);color:rgba(255,255,255,.7);padding:3rem 1.5rem 1.5rem;margin-top:auto}
+.footer-inner{max-width:1280px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr;gap:2rem}
+.footer-inner h4{color:#fff;font-size:1rem;margin-bottom:1rem}
+.footer-inner ul{list-style:none}
+.footer-inner ul li{margin-bottom:.5rem;font-size:.9rem}
+.footer-inner a:hover{color:var(--accent);cursor:pointer}
+.footer-bottom{max-width:1280px;margin:2rem auto 0;padding-top:1.5rem;border-top:1px solid rgba(255,255,255,.1);text-align:center;font-size:.85rem}
+
+/* ============ TOAST ============ */
+.toast{position:fixed;bottom:2rem;left:50%;transform:translateX(-50%) translateY(150%);background:var(--dark);color:#fff;padding:1rem 1.5rem;border-radius:60px;font-weight:500;box-shadow:0 20px 40px rgba(0,0,0,.3);z-index:1000;transition:transform .3s ease;font-size:.9rem}
+.toast.show{transform:translateX(-50%) translateY(0)}
+.toast.success{background:var(--primary)}
+.toast.error{background:#dc2626}
+
+/* ============ RESPONSIVE ============ */
+@media(max-width:900px){
+  .menu-toggle{display:block}
+  .nav-links{position:absolute;top:100%;left:0;right:0;background:#fff;flex-direction:column;padding:1rem;gap:.25rem;border-bottom:1px solid var(--border);box-shadow:var(--shadow);display:none}
+  .nav-links.open{display:flex}
+  .nav-links a{padding:.75rem 1rem;width:100%}
+  .footer-inner{grid-template-columns:1fr}
+  .hero{min-height:80vh}
+  .section{padding:3.5rem 1.25rem}
+}
+@media(max-width:600px){.form-row{grid-template-columns:1fr}}
+@media(max-width:500px){
+  .hero-actions .btn{width:100%}
+  .card-body{padding:1.25rem}
+}
+</style>
+</head>
+<body>
+
+<!-- ============ HEADER ============ -->
+<header class="site-header">
+  <div class="nav-wrap">
+    <div class="logo" data-nav="home"><div class="logo-mark">T</div><div>TBX <span>Agency</span></div></div>
+    <button class="menu-toggle" id="menuToggle" aria-label="Menu"><i class="fa-solid fa-bars"></i></button>
+    <ul class="nav-links" id="navLinks">
+      <li><a data-nav="home" class="active">Home</a></li>
+      <li><a data-nav="airbnbs">Airbnbs</a></li>
+      <li><a data-nav="gallery">Gallery</a></li>
+      <li><a data-nav="booking">Book Now</a></li>
+    </ul>
+  </div>
+</header>
+
+<!-- ============ HOME ============ -->
+<div class="page active" id="page-home">
+  <section class="hero">
+    <div class="hero-slides" id="heroSlides"></div>
+    <div class="hero-content">
+      <div class="hero-eyebrow"><i class="fa-solid fa-map-location-dot"></i> Naivasha, Kenya</div>
+      <h1>Escape to <em>Naivasha</em><br>Stay in style.</h1>
+      <p>Handpicked luxury Airbnbs with stunning lake views, verified hosts, and unforgettable experiences.</p>
+      <div class="hero-actions">
+        <a class="btn btn-accent" data-nav="airbnbs">Explore Stays <i class="fa-solid fa-arrow-right"></i></a>
+        <a class="btn btn-outline" data-nav="booking" style="color:#fff;border-color:#fff">Book Now</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-inner">
+      <div class="section-head">
+        <div class="section-eyebrow">Why TBX Agency</div>
+        <h2 class="section-title">Your Naivasha escape, perfected</h2>
+        <p class="section-sub">Curated luxury stays and experiences so you can focus on making memories.</p>
+      </div>
+      <div class="grid-3">
+        <div class="card"><div class="card-body">
+          <div style="font-size:2.5rem;color:var(--accent);margin-bottom:1rem"><i class="fa-solid fa-house-chimney-window"></i></div>
+          <h3>Curated Luxury Stays</h3>
+          <p>Every Airbnb is handpicked for quality, comfort, and that unbeatable Naivasha view.</p>
+        </div></div>
+        <div class="card"><div class="card-body">
+          <div style="font-size:2.5rem;color:var(--accent);margin-bottom:1rem"><i class="fa-solid fa-compass"></i></div>
+          <h3>Local Experiences</h3>
+          <p>Boat rides, game drives, hot air balloon safaris — book activities with your stay.</p>
+        </div></div>
+        <div class="card"><div class="card-body">
+          <div style="font-size:2.5rem;color:var(--accent);margin-bottom:1rem"><i class="fa-brands fa-whatsapp"></i></div>
+          <h3>24/7 Support</h3>
+          <p>Chat with us anytime on WhatsApp. We're here to make your stay seamless.</p>
+        </div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" style="background:#fff">
+    <div class="section-inner">
+      <div class="section-head">
+        <div class="section-eyebrow">Featured Stays</div>
+        <h2 class="section-title">Most-loved properties</h2>
+      </div>
+      <div class="grid-3" id="featuredGrid"></div>
+      <div style="text-align:center;margin-top:3rem">
+        <button class="btn btn-primary" data-nav="airbnbs">View All Airbnbs <i class="fa-solid fa-arrow-right"></i></button>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" style="background:linear-gradient(135deg,var(--primary),var(--primary-light));color:#fff">
+    <div class="section-inner" style="text-align:center">
+      <h2 class="section-title" style="color:#fff">Ready for your Naivasha escape?</h2>
+      <p style="font-size:1.1rem;opacity:.9;max-width:600px;margin:0 auto 2rem">Book directly on WhatsApp and get an instant response.</p>
+      <a href="https://wa.me/254715421626?text=Hi%20TBX%20Agency!%20I'd%20like%20to%20book%20a%20stay%20in%20Naivasha." target="_blank" rel="noopener" class="btn btn-wa">
+        <i class="fa-brands fa-whatsapp"></i> Chat on WhatsApp
+      </a>
+    </div>
+  </section>
+</div>
+
+<!-- ============ AIRBNBS ============ -->
+<div class="page" id="page-airbnbs">
+  <section class="section" style="padding-top:3rem">
+    <div class="section-inner">
+      <div class="section-head">
+        <div class="section-eyebrow">Our Stays</div>
+        <h1 class="section-title">Luxury Airbnbs in Naivasha</h1>
+        <p class="section-sub">Each property is handpicked for its views, comfort, and charm.</p>
+      </div>
+      <div class="grid-3" id="staysGrid"></div>
+    </div>
+  </section>
+</div>
+
+<!-- ============ GALLERY ============ -->
+<div class="page" id="page-gallery">
+  <section class="section" style="padding-top:3rem">
+    <div class="section-inner">
+      <div class="section-head">
+        <div class="section-eyebrow">Gallery</div>
+        <h1 class="section-title">Pictures from Naivasha</h1>
+        <p class="section-sub">Real moments captured at our properties and experiences.</p>
+      </div>
+      <div class="gallery-grid" id="galleryGrid"></div>
+    </div>
+  </section>
+</div>
+
+<!-- ============ BOOKING ============ -->
+<div class="page" id="page-booking">
+  <section class="section" style="padding-top:3rem">
+    <div class="section-inner" style="max-width:800px">
+      <div class="section-head">
+        <div class="section-eyebrow">Reserve</div>
+        <h1 class="section-title">Book your Naivasha stay</h1>
+        <p class="section-sub">Fill in your details and we'll confirm on WhatsApp within minutes.</p>
+      </div>
+
+      <form id="bookingForm" class="card" style="padding:2rem">
+        <div class="form-group"><label for="stay">Choose your Airbnb *</label><select id="stay" name="stay" required></select></div>
+        <div class="form-row">
+          <div class="form-group"><label for="checkIn">Check-in *</label><input type="date" id="checkIn" name="checkIn" required></div>
+          <div class="form-group"><label for="checkOut">Check-out *</label><input type="date" id="checkOut" name="checkOut" required></div>
+        </div>
+        <div class="form-row">
+          <div class="form-group"><label for="guests">Guests *</label><input type="number" id="guests" name="guests" min="1" max="20" value="2" required></div>
+          <div class="form-group"><label for="nights">Nights</label><input type="number" id="nights" readonly placeholder="Auto"></div>
+        </div>
+
+        <div class="form-group">
+          <label>Extra activities</label>
+          <div style="display:grid;gap:.6rem;margin-top:.5rem">
+            <label style="display:flex;align-items:center;gap:.6rem;font-weight:400"><input type="checkbox" name="activities" value="Boat Ride - KSh 2,000/person" style="width:auto"> Boat Ride (KSh 2,000/person)</label>
+            <label style="display:flex;align-items:center;gap:.6rem;font-weight:400"><input type="checkbox" name="activities" value="Game Drive - KSh 5,000/person" style="width:auto"> Game Drive (KSh 5,000/person)</label>
+            <label style="display:flex;align-items:center;gap:.6rem;font-weight:400"><input type="checkbox" name="activities" value="Hot Air Balloon - KSh 25,000/person" style="width:auto"> Hot Air Balloon (KSh 25,000/person)</label>
+            <label style="display:flex;align-items:center;gap:.6rem;font-weight:400"><input type="checkbox" name="activities" value="Horse Riding - KSh 3,000/person" style="width:auto"> Horse Riding (KSh 3,000/person)</label>
+            <label style="display:flex;align-items:center;gap:.6rem;font-weight:400"><input type="checkbox" name="activities" value="Crescent Island Tour - KSh 1,500/person" style="width:auto"> Crescent Island Tour (KSh 1,500/person)</label>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group"><label for="name">Full name *</label><input type="text" id="name" name="name" required placeholder="Jane Doe"></div>
+          <div class="form-group"><label for="phone">Phone / WhatsApp *</label><input type="tel" id="phone" name="phone" required placeholder="+254 7XX XXX XXX"></div>
+        </div>
+        <div class="form-group"><label for="email">Email *</label><input type="email" id="email" name="email" required placeholder="you@example.com"></div>
+        <div class="form-group"><label for="notes">Special requests (optional)</label><textarea id="notes" name="notes" rows="3" placeholder="Any special requirements..."></textarea></div>
+
+        <div id="totalBox" style="display:none;background:var(--bg);padding:1.25rem;border-radius:var(--radius-sm);margin-bottom:1.25rem">
+          <div style="display:flex;justify-content:space-between;margin-bottom:.5rem;font-size:.9rem"><span>Accommodation</span><span id="accTotal">KSh 0</span></div>
+          <div style="display:flex;justify-content:space-between;margin-bottom:.75rem;font-size:.9rem"><span>Activities</span><span id="actTotal">KSh 0</span></div>
+          <div style="display:flex;justify-content:space-between;padding-top:.75rem;border-top:2px solid var(--border);font-weight:800;font-size:1.15rem;color:var(--primary)"><span>Total</span><span id="grandTotal">KSh 0</span></div>
+        </div>
+
+        <button type="submit" class="btn btn-primary" style="width:100%" id="submitBtn"><i class="fa-solid fa-paper-plane"></i> Confirm Booking</button>
+        <p style="text-align:center;color:var(--muted);font-size:.85rem;margin-top:1rem"><i class="fa-solid fa-lock"></i> Saved securely + sent to WhatsApp.</p>
+      </form>
+    </div>
+  </section>
+</div>
+
+<!-- ============ ADMIN (hidden via /admin) ============ -->
+<div class="page" id="page-admin">
+  <section class="section" style="padding-top:3rem">
+    <div class="section-inner" style="max-width:900px">
+      <div class="section-head">
+        <div class="section-eyebrow">Private</div>
+        <h1 class="section-title">Admin Panel</h1>
+        <p class="section-sub">Upload and manage Naivasha photos.</p>
+      </div>
+
+      <!-- LOGIN -->
+      <div class="admin-card" id="loginCard">
+        <h2><i class="fa-solid fa-key"></i> Admin Login</h2>
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input type="password" id="password" placeholder="Enter admin password" autofocus>
+        </div>
+        <button class="btn btn-primary" id="loginBtn" style="width:100%"><i class="fa-solid fa-arrow-right-to-bracket"></i> Login</button>
+      </div>
+
+      <!-- PANEL -->
+      <div id="adminPanel" class="hidden">
+        <div class="admin-stats">
+          <div class="admin-stat"><div class="num" id="statPhotos">0</div><div class="label">Photos Uploaded</div></div>
+          <div class="admin-stat"><div class="num" id="statStorage">0 KB</div><div class="label">Storage Used</div></div>
+        </div>
+
+        <div class="admin-card">
+          <h2><i class="fa-solid fa-cloud-arrow-up"></i> Upload Naivasha Photos</h2>
+          <label class="upload-zone" id="uploadZone">
+            <input type="file" id="fileInput" accept="image/*" multiple>
+            <div class="up-icon"><i class="fa-solid fa-images"></i></div>
+            <div style="font-weight:700;margin-bottom:.3rem">Click or drag photos here</div>
+            <div style="color:var(--muted);font-size:.9rem">JPG, PNG, WebP — resized to 1600px &amp; saved to this browser</div>
+          </label>
+          <div class="admin-grid" id="adminGallery"></div>
+        </div>
+
+        <div class="admin-card">
+          <h2><i class="fa-solid fa-circle-info"></i> Info</h2>
+          <p style="color:var(--muted);font-size:.9rem;line-height:1.7">
+            Photos are saved to this browser's <strong>localStorage</strong> and appear instantly on the <a href="#gallery" style="color:var(--primary);font-weight:600">public Gallery</a> in this same browser.
+            <br><br>
+            To share photos with all visitors, upload them to <strong>imgbb.com</strong> and send the URLs to be hardcoded.
+          </p>
+        </div>
+
+        <div class="admin-card">
+          <button class="btn btn-ghost" id="logoutBtn" style="width:100%"><i class="fa-solid fa-arrow-right-from-bracket"></i> Logout</button>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ============ FOOTER ============ -->
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div>
+      <div class="logo" style="color:#fff;margin-bottom:1rem"><div class="logo-mark">T</div><div>TBX <span>Agency</span></div></div>
+      <p style="font-size:.9rem">Luxury Airbnb stays &amp; curated experiences in Naivasha, Kenya.</p>
+    </div>
+    <div>
+      <h4>Explore</h4>
+      <ul>
+        <li><a data-nav="airbnbs">Airbnbs</a></li>
+        <li><a data-nav="gallery">Gallery</a></li>
+        <li><a data-nav="booking">Book Now</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Contact</h4>
+      <ul>
+        <li><i class="fa-brands fa-whatsapp"></i> <a href="https://wa.me/254715421626" target="_blank">0715 421 626</a></li>
+        <li><i class="fa-solid fa-envelope"></i> <a href="mailto:tbxagency.africa@gmail.com">tbxagency.africa@gmail.com</a></li>
+        <li><i class="fa-solid fa-location-dot"></i> Naivasha, Kenya</li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">© 2025 TBX Agency Africa. All rights reserved.</div>
+</footer>
+
+<a href="https://wa.me/254715421626?text=Hi%20TBX%20Agency!" target="_blank" class="wa-float" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+<div class="toast" id="toast"></div>
+
+<script>
+(function(){
+'use strict';
+
+/* ============================================================
+   CONFIG
+============================================================ */
+const ADMIN_PASSWORD = 'tbx2025';       // ← change me
+const SHEET_WEBHOOK_URL = '';           // optional Google Apps Script URL
+const WHATSAPP_NUMBER = '254715421626';
+const GALLERY_KEY = 'tbx_gallery_public';
+const AUTH_KEY = 'tbx_admin_auth';
+const BOOKING_KEY = 'tbx_bookings';
+const MAX_DIM = 1600;
+const JPEG_QUALITY = 0.82;
+
+/* ============================================================
+   STAYS DATA
+============================================================ */
+const STAYS = [
+  {id:'lake-view-villa',name:'Lake View Villa',desc:'Stunning 4-bedroom villa overlooking Lake Naivasha with infinity pool and private jetty.',price:25000,beds:4,guests:8,location:'Lake Naivasha',image:'https://images.unsplash.com/photo-1613490493576-7fde63acd811?w=1200&q=80&auto=format&fit=crop'},
+  {id:'acacia-cottage',name:'Acacia Cottage',desc:'Cozy 2-bedroom cottage nestled among acacia trees. Perfect for a romantic getaway.',price:12000,beds:2,guests:4,location:'Naivasha Town',image:'https://images.unsplash.com/photo-1571896349842-33c89424de2d?w=1200&q=80&auto=format&fit=crop'},
+  {id:'rift-valley-lodge',name:'Rift Valley Lodge',desc:'Luxury 6-bedroom lodge with panoramic Rift Valley views and full staff including chef.',price:45000,beds:6,guests:12,location:'Rift Valley',image:'https://images.unsplash.com/photo-1580587771525-78b9dba3b914?w=1200&q=80&auto=format&fit=crop'},
+  {id:'papyrus-house',name:'Papyrus House',desc:'Modern 3-bedroom home surrounded by papyrus reeds, with direct lake access.',price:18000,beds:3,guests:6,location:'Lake Shore',image:'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=1200&q=80&auto=format&fit=crop'},
+  {id:'giraffe-manor',name:'Giraffe Manor Naivasha',desc:'Unique 5-bedroom estate where giraffes visit your breakfast table.',price:60000,beds:5,guests:10,location:'Naivasha',image:'https://images.unsplash.com/photo-1512918728675-ed5a9ecdebfd?w=1200&q=80&auto=format&fit=crop'},
+  {id:'sunset-cabin',name:'Sunset Cabin',desc:'Intimate 1-bedroom cabin with floor-to-ceiling windows facing the sunset.',price:9500,beds:1,guests:2,location:'Lake Naivasha',image:'https://images.unsplash.com/photo-1449844908441-8829872d2607?w=1200&q=80&auto=format&fit=crop'}
+];
+
+const ACTIVITY_PRICES = {
+  'Boat Ride - KSh 2,000/person': 2000,
+  'Game Drive - KSh 5,000/person': 5000,
+  'Hot Air Balloon - KSh 25,000/person': 25000,
+  'Horse Riding - KSh 3,000/person': 3000,
+  'Crescent Island Tour - KSh 1,500/person': 1500
+};
+
+/* ============================================================
+   UTILS
+============================================================ */
+const $ = (sel, root=document) => root.querySelector(sel);
+const $$ = (sel, root=document) => [...root.querySelectorAll(sel)];
+
+const getStayById = (id) => STAYS.find(s => s.id === id);
+
+function loadGallery(){
+  try{ return JSON.parse(localStorage.getItem(GALLERY_KEY)) || []; }
+  catch{ return []; }
+}
+function saveGallery(imgs){
+  try{ localStorage.setItem(GALLERY_KEY, JSON.stringify(imgs)); return true; }
+  catch{ showToast('Storage full. Try smaller images.','error'); return false; }
+}
+
+function showToast(msg, type='success'){
+  const el = $('#toast');
+  el.textContent = msg;
+  el.className = 'toast ' + type + ' show';
+  clearTimeout(window._tt);
+  window._tt = setTimeout(() => el.classList.remove('show'), 3200);
+}
+
+/* ============================================================
+   NAVIGATION
+============================================================ */
+const PAGES = ['home','airbnbs','gallery','booking','admin'];
+
+function navigate(page){
+  if(!PAGES.includes(page)) page = 'home';
+  $$('.page').forEach(p => p.classList.toggle('active', p.id === 'page-' + page));
+  $$('.nav-links a').forEach(a => a.classList.toggle('active', a.dataset.nav === page));
+  $('#navLinks').classList.remove('open');
+  window.scrollTo({top:0, behavior:'smooth'});
+  history.replaceState(null, '', '#' + page);
+
+  if(page === 'featured') renderFeatured();
+  if(page === 'airbnbs') renderAirbnbs();
+  if(page === 'gallery') renderPublicGallery();
+  if(page === 'booking') initBookingForm();
+  if(page === 'admin') initAdmin();
+}
+
+document.addEventListener('click', e => {
+  const t = e.target.closest('[data-nav]');
+  if(t){ e.preventDefault(); navigate(t.dataset.nav); }
+});
+
+$('#menuToggle').addEventListener('click', () => {
+  $('#navLinks').classList.toggle('open');
+});
+
+/* ============================================================
+   HERO SLIDER
+============================================================ */
+(function heroSlider(){
+  const container = $('#heroSlides');
+  if(!container) return;
+  const imgs = STAYS.slice(0, 4).map(s => s.image);
+  container.innerHTML = imgs.map((img, i) =>
+    `<div class="hero-slide${i === 0 ? ' active' : ''}" style="background-image:url('${img}')"></div>`
+  ).join('');
+  const slides = $$('.hero-slide', container);
+  let idx = 0;
+  setInterval(() => {
+    slides[idx].classList.remove('active');
+    idx = (idx + 1) % slides.length;
+    slides[idx].classList.add('active');
+  }, 5000);
+})();
+
+/* ============================================================
+   RENDER: FEATURED + AIRBNBS
+============================================================ */
+function renderFeatured(){
+  const grid = $('#featuredGrid');
+  if(!grid) return;
+  grid.innerHTML = STAYS.slice(0, 3).map(s => `
+    <div class="card">
+      <div class="card-img" style="background-image:url('${s.image}')"></div>
+      <div class="card-body">
+        <h3>${s.name}</h3>
+        <p>${s.desc}</p>
+        <div class="card-meta">
+          <span><i class="fa-solid fa-bed"></i> ${s.beds} beds</span>
+          <span><i class="fa-solid fa-user-group"></i> ${s.guests} guests</span>
+        </div>
+        <div style="display:flex;justify-content:space-between;align-items:center">
+          <div class="card-price">KSh ${s.price.toLocaleString()}<small>/night</small></div>
+          <button class="btn btn-primary" style="padding:.6rem 1.2rem;font-size:.85rem" onclick="window.__preBook('${s.id}')">Book</button>
+        </div>
+      </div>
+    </div>`).join('');
+}
+
+function renderAirbnbs(){
+  const grid = $('#staysGrid');
+  if(!grid) return;
+  grid.innerHTML = STAYS.map(s => `
+    <div class="card">
+      <div class="card-img" style="background-image:url('${s.image}')"></div>
+      <div class="card-body">
+        <h3>${s.name}</h3>
+        <p>${s.desc}</p>
+        <div class="card-meta">
+          <span><i class="fa-solid fa-bed"></i> ${s.beds} beds</span>
+          <span><i class="fa-solid fa-user-group"></i> ${s.guests} guests</span>
+          <span><i class="fa-solid fa-location-dot"></i> ${s.location}</span>
+        </div>
+        <div style="display:flex;justify-content:space-between;align-items:center">
+          <div class="card-price">KSh ${s.price.toLocaleString()}<small>/night</small></div>
+          <button class="btn btn-primary" style="padding:.6rem 1.2rem;font-size:.85rem" onclick="window.__preBook('${s.id}')">Book</button>
+        </div>
+      </div>
+    </div>`).join('');
+}
+
+window.__preBook = function(id){
+  navigate('booking');
+  setTimeout(() => {
+    const sel = $('#stay');
+    if(sel){ sel.value = id; sel.dispatchEvent(new Event('input')); }
+  }, 60);
+};
+
+/* ============================================================
+   PUBLIC GALLERY
+============================================================ */
+function renderPublicGallery(){
+  const grid = $('#galleryGrid');
+  if(!grid) return;
+  const imgs = loadGallery();
+  if(!imgs.length){
+    grid.innerHTML = `<div style="grid-column:1/-1;text-align:center;padding:2rem;color:var(--muted)">
+      <i class="fa-regular fa-images" style="font-size:3rem;margin-bottom:1rem;display:block"></i>
+      No images yet.
+    </div>`;
+    return;
+  }
+  grid.innerHTML = imgs.map(img => `
+    <div class="gallery-item">
+      <img src="${img.data}" alt="${img.name || 'Gallery'}" loading="lazy">
+    </div>`).join('');
+}
+
+/* ============================================================
+   BOOKING
+============================================================ */
+let bookingReady = false;
+
+function initBookingForm(){
+  const form = $('#bookingForm');
+  if(!form || bookingReady) return;
+  bookingReady = true;
+
+  const staySelect = form.stay;
+  const checkIn = $('#checkIn');
+  const checkOut = $('#checkOut');
+  const nightsInput = $('#nights');
+  const guestsInput = $('#guests');
+  const totalBox = $('#totalBox');
+  const accEl = $('#accTotal');
+  const actEl = $('#actTotal');
+  const grandEl = $('#grandTotal');
+  const submitBtn = $('#submitBtn');
+
+  staySelect.innerHTML = '<option value="">— Select a property —</option>' +
+    STAYS.map(s => `<option value="${s.id}">${s.name} — KSh ${s.price.toLocaleString()}/night</option>`).join('');
+
+  const today = new Date().toISOString().split('T')[0];
+  const tomorrow = new Date();
+  tomorrow.setDate(tomorrow.getDate() + 1);
+
+  checkIn.min = today;
+  checkOut.min = today;
+  checkIn.value = today;
+  checkOut.value = tomorrow.toISOString().split('T')[0];
+
+  function nightsCount(){
+    if(!checkIn.value || !checkOut.value) return 0;
+    const diff = Math.round((new Date(checkOut.value) - new Date(checkIn.value)) / 86400000);
+    return diff > 0 ? diff : 0;
+  }
+
+  function calc(){
+    const stay = getStayById(staySelect.value);
+    const n = nightsCount();
+    nightsInput.value = n || '';
+    if(!stay || n < 1){
+      totalBox.style.display = 'none';
+      return {stay:null, accommodation:0, activities:0, total:0, nights:0, guests:0};
+    }
+    const accommodation = stay.price * n;
+    const g = Math.max(1, parseInt(guestsInput.value) || 1);
+    let activities = 0;
+    $$('input[name="activities"]:checked', form).forEach(cb => {
+      activities += (ACTIVITY_PRICES[cb.value] || 0) * g;
+    });
+    accEl.textContent = 'KSh ' + accommodation.toLocaleString();
+    actEl.textContent = 'KSh ' + activities.toLocaleString();
+    grandEl.textContent = 'KSh ' + (accommodation + activities).toLocaleString();
+    totalBox.style.display = 'block';
+    return {stay, accommodation, activities, total: accommodation + activities, nights:n, guests:g};
+  }
+
+  [staySelect, checkIn, checkOut, guestsInput].forEach(el => el.addEventListener('input', calc));
+  $$('input[name="activities"]', form).forEach(cb => cb.addEventListener('change', calc));
+
+  checkIn.addEventListener('change', () => {
+    checkOut.min = checkIn.value;
+    if(checkOut.value && checkOut.value <= checkIn.value){
+      const nx = new Date(checkIn.value);
+      nx.setDate(nx.getDate() + 1);
+      checkOut.value = nx.toISOString().split('T')[0];
+    }
+    calc();
+  });
+
+  form.addEventListener('submit', async e => {
+    e.preventDefault();
+    const c = calc();
+    if(!c.stay){ showToast('Please select a property','error'); return; }
+    if(!c.nights){ showToast('Please pick valid dates','error'); return; }
+
+    const activities = $$('input[name="activities"]:checked', form).map(x => x.value).join('; ') || 'None';
+
+    const booking = {
+      timestamp: new Date().toISOString(),
+      stay: c.stay.name,
+      stayId: c.stay.id,
+      checkIn: checkIn.value,
+      checkOut: checkOut.value,
+      nights: c.nights,
+      guests: c.guests,
+      activities,
+      name: form.name.value.trim(),
+      phone: form.phone.value.trim(),
+      email: form.email.value.trim(),
+      notes: form.notes.value.trim(),
+      accommodation: c.accommodation,
+      activitiesCost: c.activities,
+      total: c.total
+    };
+
+    if(!booking.name || !booking.phone || !booking.email){
+      showToast('Please fill all required fields','error');
+      return;
+    }
+
+    try{
+      const all = JSON.parse(localStorage.getItem(BOOKING_KEY) || '[]');
+      all.push(booking);
+      localStorage.setItem(BOOKING_KEY, JSON.stringify(all));
+    }catch{}
+
+    submitBtn.disabled = true;
+    submitBtn.innerHTML = '<i class="fa-solid fa-circle-notch fa-spin"></i> Sending...';
+
+    if(SHEET_WEBHOOK_URL){
+      try{
+        await fetch(SHEET_WEBHOOK_URL, {
+          method:'POST',
+          mode:'no-cors',
+          headers:{'Content-Type':'application/json'},
+          body: JSON.stringify(booking)
+        });
+      }catch(err){ console.warn('Sheet send failed:', err); }
+    }
+
+    const msg =
+      `*New Booking — TBX Agency*%0A%0A` +
+      `*Property:* ${encodeURIComponent(booking.stay)}%0A` +
+      `*Check-in:* ${booking.checkIn}%0A*Check-out:* ${booking.checkOut}%0A` +
+      `*Nights:* ${booking.nights}%0A*Guests:* ${booking.guests}%0A` +
+      `*Activities:* ${encodeURIComponent(booking.activities)}%0A%0A` +
+      `*Name:* ${encodeURIComponent(booking.name)}%0A` +
+      `*Phone:* ${encodeURIComponent(booking.phone)}%0A` +
+      `*Email:* ${encodeURIComponent(booking.email)}%0A` +
+      `*Notes:* ${encodeURIComponent(booking.notes || '—')}%0A%0A` +
+      `*Total:* KSh ${booking.total.toLocaleString()}`;
+
+    window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${msg}`, '_blank');
+
+    showToast('Booking sent! Check WhatsApp to confirm.');
+    submitBtn.disabled = false;
+    submitBtn.innerHTML = '<i class="fa-solid fa-paper-plane"></i> Confirm Booking';
+    form.reset();
+    checkIn.value = today;
+    const tm = new Date(); tm.setDate(tm.getDate() + 1);
+    checkOut.value = tm.toISOString().split('T')[0];
+    calc();
+  });
+}
+
+/* ============================================================
+   ADMIN
+============================================================ */
+let adminReady = false;
+
+function initAdmin(){
+  if(adminReady){ return; }
+  adminReady = true;
+
+  const loginCard = $('#loginCard');
+  const panel = $('#adminPanel');
+  const password = $('#password');
+  const loginBtn = $('#loginBtn');
+  const logoutBtn = $('#logoutBtn');
+
+  if(sessionStorage.getItem(AUTH_KEY) === 'yes'){
+    loginCard.classList.add('hidden');
+    panel.classList.remove('hidden');
+    renderAdminGallery();
+    updateStats();
+  }
+
+  loginBtn.addEventListener('click', () => {
+    if(password.value === ADMIN_PASSWORD){
+      sessionStorage.setItem(AUTH_KEY, 'yes');
+      loginCard.classList.add('hidden');
+      panel.classList.remove('hidden');
+      renderAdminGallery();
+      updateStats();
+    }else{
+      showToast('Wrong password','error');
+    }
+  });
+
+  password.addEventListener('keydown', e => {
+    if(e.key === 'Enter') loginBtn.click();
+  });
+
+  logoutBtn.addEventListener('click', () => {
+    sessionStorage.removeItem(AUTH_KEY);
+    location.reload();
+  });
+
+  /* Upload */
+  const fileInput = $('#fileInput');
+  const zone = $('#uploadZone');
+  fileInput.addEventListener('change', e => {
+    if(e.target.files.length) handleFiles(e.target.files);
+    e.target.value = '';
+  });
+  ['dragover','dragenter'].forEach(ev => zone.addEventListener(ev, e => {
+    e.preventDefault(); zone.classList.add('dragover');
+  }));
+  ['dragleave','drop'].forEach(ev => zone.addEventListener(ev, e => {
+    e.preventDefault(); zone.classList.remove('dragover');
+  }));
+  zone.addEventListener('drop', e => {
+    if(e.dataTransfer.files.length) handleFiles(e.dataTransfer.files);
+  });
+
+  /* Delete */
+  $('#adminGallery').addEventListener('click', e => {
+    const btn = e.target.closest('[data-del]');
+    if(!btn) return;
+    if(!confirm('Delete this photo?')) return;
+    const imgs = loadGallery();
+    imgs.splice(Number(btn.dataset.del), 1);
+    if(saveGallery(imgs)){
+      renderAdminGallery();
+      updateStats();
+      showToast('Photo deleted');
+    }
+  });
+}
+
+function renderAdminGallery(){
+  const grid = $('#adminGallery');
+  if(!grid) return;
+  const imgs = loadGallery();
+  if(!imgs.length){
+    grid.innerHTML = `<div style="grid-column:1/-1;text-align:center;padding:2rem;color:var(--muted)">No photos yet.</div>`;
+    return;
+  }
+  grid.innerHTML = imgs.map((img, i) => `
+    <div class="admin-item">
+      <img src="${img.data}" alt="${img.name || 'photo'}" loading="lazy">
+      <button class="del" data-del="${i}" aria-label="Delete"><i class="fa-solid fa-xmark"></i></button>
+    </div>`).join('');
+}
+
+function updateStats(){
+  const imgs = loadGallery();
+  $('#statPhotos').textContent = imgs.length;
+  const bytes = imgs.reduce((sum, i) => sum + (i.data?.length || 0), 0);
+  $('#statStorage').textContent = (bytes / 1024).toFixed(0) + ' KB';
+}
+
+function processFile(file){
+  return new Promise((resolve, reject) => {
+    if(!file.type.startsWith('image/')) return reject('Not an image');
+    const reader = new FileReader();
+    reader.onload = e => {
+      const img = new Image();
+      img.onload = () => {
+        let {width, height} = img;
+        if(width > MAX_DIM || height > MAX_DIM){
+          const r = Math.min(MAX_DIM / width, MAX_DIM / height);
+          width = Math.round(width * r);
+          height = Math.round(height * r);
+        }
+        const canvas = document.createElement('canvas');
+        canvas.width = width;
+        canvas.height = height;
+        canvas.getContext('2d').drawImage(img, 0, 0, width, height);
+        try{
+          resolve({
+            name: file.name,
+            data: canvas.toDataURL('image/jpeg', JPEG_QUALITY),
+            uploaded: new Date().toISOString()
+          });
+        }catch(err){ reject(err); }
+      };
+      img.onerror = () => reject('Failed to load');
+      img.src = e.target.result;
+    };
+    reader.onerror = () => reject('Failed to read');
+    reader.readAsDataURL(file);
+  });
+}
+
+async function handleFiles(files){
+  const current = loadGallery();
+  let added = 0;
+  for(const file of files){
+    try{
+      current.push(await processFile(file));
+      added++;
+    }catch(err){ console.warn('Skipped:', file.name, err); }
+  }
+  if(added && saveGallery(current)){
+    renderAdminGallery();
+    updateStats();
+    showToast(`${added} photo${added > 1 ? 's' : ''} uploaded`);
+  }
+}
+
+/* ============================================================
+   INIT
+============================================================ */
+renderFeatured();
+renderAirbnbs();
+renderPublicGallery();
+
+// Determine start page from URL (?admin=1 or #hash)
+const params = new URLSearchParams(location.search);
+const hash = (location.hash || '').replace('#','');
+let startPage = 'home';
+
+if(params.get('admin') === '1' || hash === 'admin'){
+  startPage = 'admin';
+}else if(PAGES.includes(hash)){
+  startPage = hash;
+}
+navigate(startPage);
+
+// Handle hash changes
+window.addEventListener('hashchange', () => {
+  const h = (location.hash || '').replace('#','');
+  if(PAGES.includes(h)) navigate(h);
+});
+
+})();
+</script>
+</body>
+</html>
